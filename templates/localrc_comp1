@@ -11,6 +11,7 @@ SCREEN_LOGDIR=/opt/stack/logs
 
 HOST_IP={{ public_ip }}
 
+MULTI_HOST=1
 {% if neutron %}
 #
 # Enable Neutron
@@ -39,3 +40,7 @@ enable_service s-account
 Q_USE_SECGROUP=False
 LIBVIRT_FIREWALL_DRIVER=nova.virt.firewall.NoopFirewallDriver
 {% endif %}
+SERVICE_HOST=192.168.28.100
+MYSQL_HOST=192.168.28.100
+RABBIT_HOST=192.168.28.100
+GLANCE_HOSTPORT=192.168.28.100:9292
