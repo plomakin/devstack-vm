@@ -212,3 +212,35 @@ Finally, access your instance:
 The included `boot-cirros.py` file illustrates how to executes all of the
 above commands using the Python bindings.
 
+Environments
+===========
+This repo contains Vagrant and Ansible files to deploy different environments for Dark-Knight inspections. This environments is based on devstack multi-node installation.
+
+Installing pre-requisites
+-----------
+1. You must have VirtualBox v4.2 18 installed
+2. Install vagrant(MacOS, Windows, Ubuntu) - http://downloads.vagrantup.com/tags/v1.3.3
+3. ```sudo pip install -r pip-requirements.txt```
+
+Running environment building
+-----------
+If you want full installation,
+(for now and by default it's:
+```Compute2 <-(net2)- Controller -(net1)-> Compute1```
+)
+run like that:
+```
+./run_vagrant_provision.sh
+```
+To run sepparate virtual machines simply run:
+```
+vagrant up <controller/compute1/compute2>
+```
+To run 2 host installation:
+```
+vagrant up controller compute1
+```
+or
+```
+vagrant up controller compute2
+```
