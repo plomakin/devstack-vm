@@ -63,7 +63,7 @@ Vagrant.configure("2") do |config|
         ansible.playbook = "devstack_comp2.yaml"
         ansible.verbose = "vv"
     end
-    config.vm.provision :shell, :inline => "cd devstack; sudo -u vagrant env HOME=/home/vagrant ./stack.sh"
-    config.vm.provision :shell, :inline => "ovs-vsctl add-port br-ex eth2"
+    comp2.vm.provision :shell, :inline => "cd devstack; sudo -u vagrant env HOME=/home/vagrant ./stack.sh"
+    comp2.vm.provision :shell, :inline => "ovs-vsctl add-port br-ex eth2"
     end
 end
