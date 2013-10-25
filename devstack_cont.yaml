@@ -28,3 +28,8 @@
       command: ip link set dev eth2 up
       sudo: True
 
+    - name: hostname setting
+      action: shell hostname controller
+      action: shell echo controller > /etc/hostname
+      sudo: True
+

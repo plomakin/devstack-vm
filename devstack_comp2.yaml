@@ -2,7 +2,7 @@
 - hosts: compute2
   vars:
     devstack_repo: git://github.com/openstack-dev/devstack.git
-    public_ip: 192.168.30.101
+    public_ip: 192.168.28.102
     version: stable/havana
     neutron: True
     swift: True
@@ -16,10 +16,10 @@
        - git
 
     - name: checkout devstack
-      git: "repo={{ devstack_repo }} dest=/home/vagrant/devstack version=stable/grizzly"
+      git: "repo={{ devstack_repo }} dest=/home/vagrant/devstack version={{ version }}"
 
     - name: localrc
-      template: src=templates/localrc_comp2 dest=/home/vagrant/devstack/localrc
+      template: src=templates/localrc_comp dest=/home/vagrant/devstack/localrc
 
     - name: source openrc in profile
       lineinfile: dest=/home/vagrant/.profile regexp=".*openrc" line='. /home/vagrant/devstack/openrc'
@@ -30,4 +30,5 @@
   
     - name: hostname setting
       action: shell hostname compute2
+      action: shell echo compute2 > /etc/hostname
       sudo: True
