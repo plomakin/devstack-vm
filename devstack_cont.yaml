@@ -29,7 +29,6 @@
       sudo: True
 
     - name: hostname setting
-      action: shell hostname controller
-      action: shell echo controller > /etc/hostname
+      action: shell hostname controller && echo controller > /etc/hostname
       sudo: True
 

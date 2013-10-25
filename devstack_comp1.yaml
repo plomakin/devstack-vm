@@ -29,7 +29,6 @@
       sudo: True
   
     - name: hostname setting
-      action: shell hostname compute1
-      action: shell echo compute1 > /etc/hostname
+      action: shell hostname compute1 && echo compute1 > /etc/hostname
       sudo: True
 
