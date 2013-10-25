@@ -14,10 +14,11 @@ parallel_provision() {
  
 # start boxes sequentially to avoid vbox explosions
 vagrant up --no-provision
+
+vagrant provision controller
  
 # but run provision tasks in parallel
 cat <<EOF | parallel_provision
-controller
 compute1
 compute2
 EOF

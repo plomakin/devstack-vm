@@ -12,7 +12,6 @@ SCREEN_LOGDIR=/opt/stack/logs
 HOST_IP={{ public_ip }}
 
 MULTI_HOST=1
-SCHEDULER=nova.scheduler.simple.SimpleScheduler
 {% if neutron %}
 #
 # Enable Neutron
@@ -41,3 +40,4 @@ enable_service s-account
 Q_USE_SECGROUP=False
 LIBVIRT_FIREWALL_DRIVER=nova.virt.firewall.NoopFirewallDriver
 {% endif %}
+SCHEDULER=nova.scheduler.simple.SimpleScheduler
